@@ -1,0 +1,42 @@
+default:
+  suites:
+    default:
+      contexts:
+        - GitHubContext
+  formatters:
+    pretty:
+    junit:
+    html:
+      output_path: %paths.base%/report
+
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2:
+        browser: chrome
+        capabilities:
+          chrome:
+            switches:
+#              - "start-fullscreen"
+              - "start-maximized"
+#              - "no-sandbox"
+      base_url: 'https://www.google.com'
+    SensioLabs\Behat\PageObjectExtension:
+      namespaces:
+        page: [Acme\Features\Context\Page, Acme\Page]
+        element: [Acme\Features\Context\Page\Element, Acme\Page\Element]
+
+    elkan\BehatFormatter\BehatFormatterExtension:
+      projectName: GitHub
+      name: html
+      renderer: Behat2
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true
+      show_tags: true
+
+    jarnaiz\JUnitFormatter\JUnitFormatterExtension:
+      filename: index.xml
+      outputDir: %paths.base%/report
+
