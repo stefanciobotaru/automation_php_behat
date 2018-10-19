@@ -2,7 +2,7 @@
 ------------------
 
 1) clone repository
-2) `cd` to basicSetup directory
+2) `cd` to automation_php_behat directory
 3) to install Behat run from command line:  
 `composer install --prefer-dist`
 
