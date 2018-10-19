@@ -36,10 +36,10 @@ class GitHubContext implements Context
 
 
     /**
-     * @Given /^Valid data to add a new repository with (.*)$/
+     * @Given /^Valid data structure to add a new repository with (.*)$/
      * @param $name
      */
-    public function validDataToAddANewRepositoryWith($name)
+    public function validDataStructureToAddANewRepositoryWith($name)
     {
         $this->newRepoData = Data::generateRandomDataForNewRepository($name);
     }
@@ -122,7 +122,7 @@ class GitHubContext implements Context
      */
     public function theSelectedRepoIsSuccessfullyDeleted()
     {
-        Asserts::assertRepoIsDeleted($this->responseCode);
+        Asserts::assertRepoIsDeletedWithSuccess($this->responseCode);
     }
 
     /**
@@ -183,6 +183,15 @@ class GitHubContext implements Context
     public function repositoryIsPresent($repoName)
     {
         Asserts::assertRepoIsPresent($repoName, $this->availableRepos);
+    }
+
+    /**
+     * @Then /^the response code is correct for a failed delete$/
+     * @throws Exception
+     */
+    public function theResponseCodeIsCorrectForAFailedDelete()
+    {
+        Asserts::assertRepoDeleteThatFails($this->responseCode);
     }
 
 

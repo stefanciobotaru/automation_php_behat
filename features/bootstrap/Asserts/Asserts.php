@@ -23,13 +23,13 @@ class Asserts
     }
 
     /**
-     * Asserts response code 204 No Content for delete repo
+     * Asserts response code 204 No Content for delete repo with success
      *
      * @param $responseCode
      *
      * @throws \Exception
      */
-    public static function assertRepoIsDeleted($responseCode)
+    public static function assertRepoIsDeletedWithSuccess($responseCode)
     {
         if ($responseCode != 204) {
             throw new \Exception("Delete repo call replied with: $responseCode, different than 204");
@@ -37,6 +37,20 @@ class Asserts
 
     }
 
+    /**
+     * Asserts response code 404 Not Found for delete repo that fails
+     *
+     * @param $responseCode
+     *
+     * @throws \Exception
+     */
+    public static function assertRepoDeleteThatFails($responseCode)
+    {
+        if ($responseCode != 404) {
+            throw new \Exception("Delete fail repo call replied with: $responseCode, different than 404");
+        }
+
+    }
 
     /**
      * Asserts the number of remaining repos

@@ -348,8 +348,8 @@
                     <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
-                            <span class="text">Valid data to add a new repository with Repo1 </span>
-                            <span class="path">GitHubContext::validDataToAddANewRepositoryWith()</span>
+                            <span class="text">Valid data structure to add a new repository with Repo1 </span>
+                            <span class="path">GitHubContext::validDataStructureToAddANewRepositoryWith()</span>
                         </div>
                     </li>
                     <li class="passed">
@@ -369,8 +369,8 @@
                     <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
-                            <span class="text">Valid data to add a new repository with Repo2 </span>
-                            <span class="path">GitHubContext::validDataToAddANewRepositoryWith()</span>
+                            <span class="text">Valid data structure to add a new repository with Repo2 </span>
+                            <span class="path">GitHubContext::validDataStructureToAddANewRepositoryWith()</span>
                         </div>
                     </li>
                     <li class="passed">
@@ -390,8 +390,8 @@
                     <li class="passed">
                         <div class="step">
                             <span class="keyword">Given </span>
-                            <span class="text">Valid data to add a new repository with Repo3 </span>
-                            <span class="path">GitHubContext::validDataToAddANewRepositoryWith()</span>
+                            <span class="text">Valid data structure to add a new repository with Repo3 </span>
+                            <span class="path">GitHubContext::validDataStructureToAddANewRepositoryWith()</span>
                         </div>
                     </li>
                     <li class="passed">
@@ -410,7 +410,7 @@
                     </li>
             <div class="scenario">
                 <ul class="tags">
-                    <li>@delete</li>
+                    <li>@delete_one</li>
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
@@ -449,6 +449,7 @@
             </div>
             <div class="scenario">
                 <ul class="tags">
+                    <li>@delete_dummy</li>
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
@@ -469,10 +470,18 @@
                             <span class="path">GitHubContext::iCallTheApiMethodToDeleteARepo()</span>
                         </div>
                     </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the response code is correct for a failed delete </span>
+                            <span class="path">GitHubContext::theResponseCodeIsCorrectForAFailedDelete()</span>
+                        </div>
+                    </li>
                 </ol>
             </div>
             <div class="scenario">
                 <ul class="tags">
+                    <li>@remaining</li>
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
@@ -509,6 +518,7 @@ present(thisassertshouldfail).png does not exist
             </div>
             <div class="scenario">
                 <ul class="tags">
+                    <li>@delete_all</li>
                 </ul>
                 <h3>
                     <span class="keyword"> Scenario: </span>
@@ -522,21 +532,22 @@ present(thisassertshouldfail).png does not exist
                             <span class="path">GitHubContext::iCallTheToGetAllRepos()</span>
                         </div>
                     </li>
-                    <li class="passed">
+                    <li class="failed">
                         <div class="step">
                             <span class="keyword">When </span>
                             <span class="text">I call the "https://api.github.com/repos" api method to delete all repos </span>
                             <span class="path">GitHubContext::iCallTheApiMethodToDeleteAllRepos()</span>
                         </div>
+                        <pre class="backtrace">Fatal error: Call to undefined method Asserts\Asserts::assertRepoIsDeleted()</pre>screenshot: D:\Personal\Projects\automation_php_behat/results/html/assets/screenshots/default/default/GitHub/Deleteallrepositories.png does not exist
                     </li>
-                    <li class="passed">
+                    <li class="skipped">
                         <div class="step">
                             <span class="keyword">And </span>
                             <span class="text">I call the "https://api.github.com/user/repos" to get all repos </span>
                             <span class="path">GitHubContext::iCallTheToGetAllRepos()</span>
                         </div>
                     </li>
-                    <li class="passed">
+                    <li class="skipped">
                         <div class="step">
                             <span class="keyword">Then </span>
                             <span class="text">no repositories are available </span>
@@ -546,8 +557,8 @@ present(thisassertshouldfail).png does not exist
                 </ol>
             </div>
             <div class="featureResult failed">Feature has failed
-                <span>Scenarios passed : 80%,
-                Scenarios failed : 20%</span>
+                <span>Scenarios passed : 60%,
+                Scenarios failed : 40%</span>
             </div>
         </div>
         <div class="summary failed">
@@ -556,13 +567,13 @@ present(thisassertshouldfail).png does not exist
                     1 features ( <strong class="failed">1 fail</strong> )
                 </p>
                 <p class="scenarios">
-                    5 scenarios ( <strong class="passed">4 success</strong> <strong class="failed">1 fail</strong> )
+                    5 scenarios ( <strong class="passed">3 success</strong> <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="steps">
-                    22 steps ( <strong class="passed">21 success</strong> <strong class="failed">1 fail</strong> )
+                    23 steps ( <strong class="passed">19 success</strong> <strong class="skipped">2 skipped</strong> <strong class="failed">2 fail</strong> )
                 </p>
                 <p class="time">
-                0m23.21s - 10.07Mb
+                0m17.99s - 10.14Mb
                 </p>
             </div>
             <div class="switchers">
