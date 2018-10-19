@@ -1,4 +1,4 @@
-Feature: GitHub
+Feature: GitHub add, delete repositories
 
   @add
   Scenario Outline: Successfully create 3 distinct repositories and assert that the response code is correct
@@ -39,6 +39,3 @@ Feature: GitHub
     When I call the "https://api.github.com/repos" api method to delete all repos
     And I call the "https://api.github.com/user/repos" to get all repos
     Then no repositories are available
-
-
-
