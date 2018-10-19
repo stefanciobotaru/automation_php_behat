@@ -43,7 +43,6 @@ class CAPI
         if ($debug) {
             echo "Request: " . $requestData . "\n";
             echo "URL: " . $hostUrl . "\n";
-            echo "Host URL: " . $hostUrl . "\n";
             echo "Headers:" . print_r($curlOptions);
         }
 
