@@ -157,7 +157,7 @@ class GitHubContext implements Context
             foreach ($this->availableRepos as $repo) {
                 if ($repo->name != self::MAIN_REPO) {
                     $response = $this->APIClass->callGitHubAPI($host . "/" . self::OWNER . "/$repo->name", "DELETE");
-                    Asserts::assertRepoIsDeleted($response['Code']);
+                    Asserts::assertRepoIsDeletedWithSuccess($response['Code']);
                 }
             }
         } else {

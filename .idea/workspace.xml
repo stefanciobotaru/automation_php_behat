@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a6d8b79-e29c-48a1-813b-289cf3fa87bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/api.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/api.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/bootstrap/Asserts/Asserts.php" beforeDir="false" afterPath="$PROJECT_DIR$/features/bootstrap/Asserts/Asserts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/bootstrap/GitHubContext.php" beforeDir="false" afterPath="$PROJECT_DIR$/features/bootstrap/GitHubContext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/report/index.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +49,7 @@
         <counts>
           <entry key="dummy" value="13" />
           <entry key="feature" value="860" />
-          <entry key="php" value="3067" />
+          <entry key="php" value="3071" />
           <entry key="yml" value="26" />
         </counts>
       </usages-collector>
@@ -64,7 +61,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Cucumber" value="860" />
-          <entry key="PHP" value="3067" />
+          <entry key="PHP" value="3071" />
           <entry key="PLAIN_TEXT" value="13" />
           <entry key="YAML" value="26" />
         </counts>
@@ -75,7 +72,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/api.feature">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -84,11 +81,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/features/bootstrap/GitHubContext.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="193" column="39" selection-start-line="193" selection-start-column="39" selection-end-line="193" selection-end-column="39" />
+            <state relative-caret-position="281">
+              <caret line="159" column="60" selection-start-line="159" selection-start-column="60" selection-end-line="159" selection-end-column="60" />
               <folding>
                 <element signature="e#6#100#0#PHP" expanded="true" />
                 <element signature="e#102#134#0#PHP" expanded="true" />
@@ -136,8 +133,8 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/features/bootstrap/Lib/CAPI.php" />
         <option value="$PROJECT_DIR$/features/bootstrap/Asserts/Asserts.php" />
-        <option value="$PROJECT_DIR$/features/bootstrap/GitHubContext.php" />
         <option value="$PROJECT_DIR$/features/api.feature" />
+        <option value="$PROJECT_DIR$/features/bootstrap/GitHubContext.php" />
       </list>
     </option>
   </component>
@@ -336,7 +333,7 @@
       <option name="presentableId" value="Default" />
       <updated>1539962233701</updated>
       <workItem from="1539962234928" duration="2097000" />
-      <workItem from="1539970603596" duration="14580000" />
+      <workItem from="1539970603596" duration="14658000" />
     </task>
     <servers />
   </component>
@@ -373,7 +370,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16677000" />
+    <option name="totallyTimeSpent" value="16755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -532,21 +529,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/bootstrap/GitHubContext.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="193" column="39" selection-start-line="193" selection-start-column="39" selection-end-line="193" selection-end-column="39" />
-          <folding>
-            <element signature="e#6#100#0#PHP" expanded="true" />
-            <element signature="e#102#134#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/features/api.feature">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/bootstrap/GitHubContext.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="159" column="60" selection-start-line="159" selection-start-column="60" selection-end-line="159" selection-end-column="60" />
+          <folding>
+            <element signature="e#6#100#0#PHP" expanded="true" />
+            <element signature="e#102#134#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
