@@ -338,6 +338,186 @@
             </ul>
             <div class="scenario">
                 <ul class="tags">
+                    <li>@add</li>
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario Outline: </span>
+                    <span class="title">Successfully create 3 distinct repositories and assert that the response code is correct</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">Valid data structure to add a new repository with Repo1 </span>
+                            <span class="path">GitHubContext::validDataStructureToAddANewRepositoryWith()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I call the "https://api.github.com/user/repos" api method to add a repo </span>
+                            <span class="path">GitHubContext::iCallTheApiMethodToAddARepo()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">a new repository is created </span>
+                            <span class="path">GitHubContext::aNewRepositoryIsCreated()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">Valid data structure to add a new repository with Repo2 </span>
+                            <span class="path">GitHubContext::validDataStructureToAddANewRepositoryWith()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I call the "https://api.github.com/user/repos" api method to add a repo </span>
+                            <span class="path">GitHubContext::iCallTheApiMethodToAddARepo()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">a new repository is created </span>
+                            <span class="path">GitHubContext::aNewRepositoryIsCreated()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">Valid data structure to add a new repository with Repo3 </span>
+                            <span class="path">GitHubContext::validDataStructureToAddANewRepositoryWith()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I call the "https://api.github.com/user/repos" api method to add a repo </span>
+                            <span class="path">GitHubContext::iCallTheApiMethodToAddARepo()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">a new repository is created </span>
+                            <span class="path">GitHubContext::aNewRepositoryIsCreated()</span>
+                        </div>
+                    </li>
+            <div class="scenario">
+                <ul class="tags">
+                    <li>@delete_one</li>
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Delete successfully one of them and assert that the response code is correct</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I call the "https://api.github.com/user/repos" to get all repos </span>
+                            <span class="path">GitHubContext::iCallTheToGetAllRepos()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">and save one to be deleted </span>
+                            <span class="path">GitHubContext::andSaveOneForLater()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I call the "https://api.github.com/repos" api method to delete the saved repo </span>
+                            <span class="path">GitHubContext::iCallTheApiMethodToDeleteARepo()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the selected repo is successfully deleted </span>
+                            <span class="path">GitHubContext::theSelectedRepoIsSuccessfullyDeleted()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                    <li>@delete_dummy</li>
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">Try to delete again one of the repositories and assert that the response code is correct for a failed delete</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">a dummy repo to delete is saved </span>
+                            <span class="path">GitHubContext::aDummyRepoName()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">When </span>
+                            <span class="text">I call the "https://api.github.com/repos" api method to delete the saved repo </span>
+                            <span class="path">GitHubContext::iCallTheApiMethodToDeleteARepo()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">the response code is correct for a failed delete </span>
+                            <span class="path">GitHubContext::theResponseCodeIsCorrectForAFailedDelete()</span>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
+                    <li>@remaining</li>
+                </ul>
+                <h3>
+                    <span class="keyword"> Scenario: </span>
+                    <span class="title">List the remaining repositories and assert the response code is correct, assert that the 2
+remaining repositories are still present and also assert that the deleted repository is
+present(this assert should fail)</span>
+                </h3>
+                <ol>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Given </span>
+                            <span class="text">I call the "https://api.github.com/user/repos" to get all repos </span>
+                            <span class="path">GitHubContext::iCallTheToGetAllRepos()</span>
+                        </div>
+                    </li>
+                    <li class="passed">
+                        <div class="step">
+                            <span class="keyword">Then </span>
+                            <span class="text">"2" remaining repositories are still present </span>
+                            <span class="path">GitHubContext::remainingRepositoriesAreStillPresent()</span>
+                        </div>
+                    </li>
+                    <li class="failed">
+                        <div class="step">
+                            <span class="keyword">And </span>
+                            <span class="text">"Repo1" repository is present </span>
+                            <span class="path">GitHubContext::repositoryIsPresent()</span>
+                        </div>
+                        <pre class="backtrace">The expected repo: Repo1 is not present</pre>screenshot: D:\Personal\Projects\automation_php_behat/results/html/assets/screenshots/default/default/GitHubadd,deleterepositories/Listtheremainingrepositoriesandasserttheresponsecodeiscorrect,assertthatthe2
+remainingrepositoriesarestillpresentandalsoassertthatthedeletedrepositoryis
+present(thisassertshouldfail).png does not exist
+                    </li>
+                </ol>
+            </div>
+            <div class="scenario">
+                <ul class="tags">
                     <li>@delete_all</li>
                 </ul>
                 <h3>
@@ -375,22 +555,24 @@
                     </li>
                 </ol>
             </div>
-            <div class="featureResult success">Feature has success
+            <div class="featureResult failed">Feature has failed
+                <span>Scenarios passed : 80%,
+                Scenarios failed : 20%</span>
             </div>
         </div>
-        <div class="summary passed">
+        <div class="summary failed">
             <div class="counters">
                 <p class="features">
-                    1 features ( <strong class="passed">1 success</strong> )
+                    1 features ( <strong class="failed">1 fail</strong> )
                 </p>
                 <p class="scenarios">
-                    1 scenarios ( <strong class="passed">1 success</strong> )
+                    5 scenarios ( <strong class="passed">4 success</strong> <strong class="failed">1 fail</strong> )
                 </p>
                 <p class="steps">
-                    4 steps ( <strong class="passed">4 success</strong> )
+                    23 steps ( <strong class="passed">22 success</strong> <strong class="failed">1 fail</strong> )
                 </p>
                 <p class="time">
-                0m4.04s - 9.90Mb
+                0m22.00s - 7.68Mb
                 </p>
             </div>
             <div class="switchers">

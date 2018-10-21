@@ -1,7 +1,17 @@
 <?xml version="1.0"?>
 <testsuites>
   <testsuite name="default" tests="0"/>
-  <testsuite name="GitHub add, delete repositories" tests="1" failures="0" skipped="0" errors="0" time="3.615">
-    <testcase name="Delete all repositories" time="3.542" status="passed"/>
+  <testsuite name="GitHub add, delete repositories" tests="7" failures="1" skipped="0" errors="0" time="21.243">
+    <testcase name="Successfully create 3 distinct repositories and assert that the response code is correct Line #11" time="2.181" status="passed"/>
+    <testcase name="Successfully create 3 distinct repositories and assert that the response code is correct Line #12" time="1.844" status="passed"/>
+    <testcase name="Successfully create 3 distinct repositories and assert that the response code is correct Line #13" time="1.758" status="passed"/>
+    <testcase name="Delete successfully one of them and assert that the response code is correct" time="4.44" status="passed"/>
+    <testcase name="Try to delete again one of the repositories and assert that the response code is correct for a failed delete" time="1.78" status="passed"/>
+    <testcase name="List the remaining repositories and assert the response code is correct, assert that the 2&#10;remaining repositories are still present and also assert that the deleted repository is&#10;present(this assert should fail)" time="2.714" status="failed">
+      <failure type="Exception"><![CDATA[And "Repo1" repository is present:
+
+The expected repo: Repo1 is not present]]></failure>
+    </testcase>
+    <testcase name="Delete all repositories" time="6.307" status="passed"/>
   </testsuite>
 </testsuites>

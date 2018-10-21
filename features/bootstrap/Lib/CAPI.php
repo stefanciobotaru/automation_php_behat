@@ -2,7 +2,6 @@
 
 namespace Lib;
 
-
 /**
  * Class that initializes services and authentication required REST API
  * @package lib
@@ -23,7 +22,7 @@ class CAPI
      * @param string $requestData
      * @param bool   $debug
      *
-     * @return array returns errors or null
+     * @return array returns call response code and
      * @throws \Exception
      */
     function callGitHubAPI($hostUrl, $method, $requestData = null, $debug = false)
