@@ -38,6 +38,7 @@ Feature: GitHub add, delete repositories
   @delete_all
   Scenario: Delete all repositories
     Given I call the "https://api.github.com/user/repos" to get all repos
+    Then the response code is correct for list repos call
     When I call the "https://api.github.com/repos" api method to delete all repos
     And I call the "https://api.github.com/user/repos" to get all repos
     Then no repositories are available
