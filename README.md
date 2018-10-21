@@ -29,7 +29,8 @@ available tags: @add, @delete_one, @delete_dummy, @remaining, @delete_all
 
 \..\automation_php_behat\features\api.feature
 
-## Report file
+## Report files
 ---------------
 
 \..\automation_php_behat\report\index.html
+\..\automation_php_behat\report\index.xml
