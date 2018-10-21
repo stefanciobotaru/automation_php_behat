@@ -84,6 +84,8 @@ class GitHubContext implements Context
             throw new \Exception('No available repos');
         }
 
+        Asserts::assertListRepoOK($response['Code']);
+
     }
 
     /**

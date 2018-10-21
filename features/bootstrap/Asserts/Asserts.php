@@ -8,6 +8,21 @@ class Asserts
 {
 
     /**
+     * Asserts response code 200 OK for list repos
+     *
+     * @param $responseCode
+     *
+     * @throws \Exception
+     */
+    public static function assertListRepoOK($responseCode)
+    {
+        if ($responseCode != 200) {
+            throw new \Exception("List repos call replied with: $responseCode, different than 200");
+        }
+
+    }
+
+    /**
      * Asserts response code 201 Created for add repo
      *
      * @param $responseCode
