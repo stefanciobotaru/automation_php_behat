@@ -10,11 +10,13 @@
 ## Behat command line
 ---------------------
 
-1) run all feature with all scenarios from project <br />
+1) run all scenarios from project <br />
 \automation_php_behat\bin>behat -p default --config D:\Personal\Projects\automation_php_behat\behat.yml
 
 2) you can run also a single scenario using a tag <br />
 \automation_php_behat\bin>behat -p default --tags add --config D:\Personal\Projects\automation_php_behat\behat.yml <br />
+
+available tags: @add, @delete_one, @delete_dummy, @remaining, @delete_all
 
 --config   path to behat.yml config file <br />
 --tags     scenario tag <br />
