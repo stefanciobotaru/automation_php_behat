@@ -1,10 +1,10 @@
 # Steps to install
 ------------------
 
-1) clone repository
-2) `cd` to basicSetup directory
-3) to install Behat run from command line:  
-`composer install --prefer-dist`
+1) install php, at least version 5.6
+2) clone repository
+3) `cd` to automation_php_behat directory
+4) update dependency `php composer.phar update`
 
 ## Behat command line
 ---------------------
