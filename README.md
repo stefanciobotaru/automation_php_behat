@@ -13,10 +13,10 @@
 ---------------------
 
 1) run all scenarios from project <br />
-\automation_php_behat\bin>behat -p default --config D:\Personal\Projects\automation_php_behat\behat.yml
+\automation_php_behat\bin>behat -p default --config \..\automation_php_behat\behat.yml
 
 2) you can run also a single scenario using a tag <br />
-\automation_php_behat\bin>behat -p default --tags add --config D:\Personal\Projects\automation_php_behat\behat.yml <br />
+\automation_php_behat\bin>behat -p default --tags add --config \..\automation_php_behat\behat.yml <br />
 
 available tags: @add, @delete_one, @delete_dummy, @remaining, @delete_all
 
@@ -27,9 +27,9 @@ available tags: @add, @delete_one, @delete_dummy, @remaining, @delete_all
 ## Feature file
 ---------------
 
-\automation_php_behat\features\api.feature
+\..\automation_php_behat\features\api.feature
 
 ## Report file
 ---------------
 
-\automation_php_behat\report\index.html
+\..\automation_php_behat\report\index.html
