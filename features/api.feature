@@ -2,7 +2,7 @@ Feature: GitHub add, delete repositories
 
   @add
   Scenario Outline: Successfully create 3 distinct repositories and assert that the response code is correct
-    Given Valid data structure to add a new repository with <name>
+    Given a valid data structure to add a new repository with <name>
     When I call the "https://api.github.com/user/repos" api method to add a repo
     Then a new repository is created
 

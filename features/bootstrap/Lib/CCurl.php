@@ -14,10 +14,10 @@ class CCurl
      *
      * @param string $url         the request URL
      * @param array  $options     array of options, to be passed to curl_setopt
-     * @param string $requestType CURL request type (eg. POST, PUT). Default CURL request type is GET
+     * @param string $requestType CURL request type (eg. GET, POST, PUT)
      * @param array  $data        request data
      *
-     * @return bool|mixed returns the response if it exists. If response is empty, it returns false
+     * @return array returns the response and response code
      */
     function callAPI($url, $options = [], $requestType = null, $data = [])
     {
@@ -47,39 +47,6 @@ class CCurl
 
         if (!empty($response)) {
             return $response;
-        } else {
-            return false;
-        }
-    }
-
-    /**
-     * Check HTTP status for a page
-     *
-     * @param string $page page url
-     *
-     * @return boolean true if page is up or false if page has internal issues
-     */
-    function checkPageStatus($page)
-    {
-
-        $ch = curl_init($page);
-
-        //proxy settings
-        $proxy = 'http://proxy.avangate.local:8080';
-        if (strpos($page, '.local') == false) {
-            curl_setopt($ch, CURLOPT_PROXY, $proxy);
-        }
-
-        curl_setopt($ch, CURLOPT_HEADER, 1);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_exec($ch);
-        $httpcode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        if ($httpcode >= 200 && $httpcode < 300) {
-            return true;
         } else {
             return false;
         }

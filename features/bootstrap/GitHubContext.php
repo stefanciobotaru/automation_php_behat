@@ -16,10 +16,13 @@ class GitHubContext implements Context
 
     const OWNER     = 'stefanciobotaru';
     const MAIN_REPO = 'automation_php_behat';
+    const USER      = 'stefanciobotaru';
+    const PASSWORD  = 'InFjXw30';
 
     public $newRepoData;
     public $availableRepos;
     public $repoToDelete;
+
     public $responseCode;
 
     public $APIClass;
@@ -29,14 +32,13 @@ class GitHubContext implements Context
 
         $this->APIClass = new CAPI();
 
-        $this->APIClass->setUser("stefanciobotaru");
-        $this->APIClass->setPassword("InFjXw30");
+        $this->APIClass->setUser(self::USER);
+        $this->APIClass->setPassword(self::PASSWORD);
 
     }
 
-
     /**
-     * @Given /^Valid data structure to add a new repository with (.*)$/
+     * @Given /^a valid data structure to add a new repository with (.*)$/
      * @param $name
      */
     public function validDataStructureToAddANewRepositoryWith($name)
@@ -193,6 +195,5 @@ class GitHubContext implements Context
     {
         Asserts::assertRepoDeleteThatFails($this->responseCode);
     }
-
 
 }
