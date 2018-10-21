@@ -754,7 +754,7 @@ class WebAssert
     }
 
     /**
-     * Asserts a condition.
+     * Assert a condition.
      *
      * @param bool   $condition
      * @param string $message   Failure message
@@ -771,7 +771,7 @@ class WebAssert
     }
 
     /**
-     * Asserts a condition involving the response text.
+     * Assert a condition involving the response text.
      *
      * @param bool   $condition
      * @param string $message   Failure message
@@ -788,7 +788,7 @@ class WebAssert
     }
 
     /**
-     * Asserts a condition on an element.
+     * Assert a condition on an element.
      *
      * @param bool    $condition
      * @param string  $message   Failure message
@@ -806,7 +806,7 @@ class WebAssert
     }
 
     /**
-     * Asserts a condition involving the text of an element.
+     * Assert a condition involving the text of an element.
      *
      * @param bool    $condition
      * @param string  $message   Failure message

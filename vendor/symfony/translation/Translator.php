@@ -420,7 +420,7 @@ EOF
     }
 
     /**
-     * Asserts that the locale is valid, throws an Exception if not.
+     * Assert that the locale is valid, throws an Exception if not.
      *
      * @param string $locale Locale to tests
      *

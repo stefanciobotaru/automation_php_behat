@@ -15,6 +15,7 @@ Feature: GitHub add, delete repositories
   @delete_one
   Scenario: Delete successfully one of them and assert that the response code is correct
     Given I call the "https://api.github.com/user/repos" to get all repos
+    And the response code is correct for list repos call
     And and save one to be deleted
     When I call the "https://api.github.com/repos" api method to delete the saved repo
     Then the selected repo is successfully deleted

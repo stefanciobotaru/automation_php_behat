@@ -1,6 +1,12 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: stefan.ciobotaru
+ * Date: 10/20/2018
+ * Time: 8:50 PM
+ */
 
-namespace Asserts;
+namespace Assert;
 
 use GitHubContext;
 
@@ -8,7 +14,7 @@ class Asserts
 {
 
     /**
-     * Asserts response code 200 OK for list repos
+     * Assert response code 200 OK for list repos
      *
      * @param $responseCode
      *
@@ -23,7 +29,7 @@ class Asserts
     }
 
     /**
-     * Asserts response code 201 Created for add repo
+     * Assert response code 201 Created for add repo
      *
      * @param $responseCode
      *
@@ -38,7 +44,7 @@ class Asserts
     }
 
     /**
-     * Asserts response code 204 No Content for delete repo with success
+     * Assert response code 204 No Content for delete repo with success
      *
      * @param $responseCode
      *
@@ -53,7 +59,7 @@ class Asserts
     }
 
     /**
-     * Asserts response code 404 Not Found for delete repo that fails
+     * Assert response code 404 Not Found for delete repo that fails
      *
      * @param $responseCode
      *
@@ -68,7 +74,7 @@ class Asserts
     }
 
     /**
-     * Asserts the number of remaining repos
+     * Assert the number of remaining repos
      *
      * @param $expected
      * @param $actual
@@ -98,7 +104,7 @@ class Asserts
 
 
     /**
-     * Asserts repo is present
+     * Assert repo is present
      *
      * @param $expected
      * @param $actual

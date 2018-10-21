@@ -9,7 +9,7 @@
 use Behat\Behat\Context\Context;
 use Data\Data;
 use Lib\CAPI;
-use Asserts\Asserts;
+use Assert\Asserts;
 
 class GitHubContext implements Context
 {
@@ -78,13 +78,13 @@ class GitHubContext implements Context
     {
         $response = $this->APIClass->callGitHubAPI($host, "GET");
 
+        $this->responseCode = $response['Code'];
+
         if (isset($response['Body'])) {
             $this->availableRepos = $response['Body'];
         } else {
             throw new \Exception('No available repos');
         }
-
-        Asserts::assertListRepoOK($response['Code']);
 
     }
 
@@ -193,9 +193,18 @@ class GitHubContext implements Context
      * @Then /^the response code is correct for a failed delete$/
      * @throws Exception
      */
-    public function theResponseCodeIsCorrectForAFailedDelete()
+    public function heResponseCodeIsCorrectForAFailedDelete()
     {
         Asserts::assertRepoDeleteThatFails($this->responseCode);
+    }
+
+    /**
+     * @Given /^the response code is correct for list repos call$/
+     * @throws Exception
+     */
+    public function theResponseCodeIsCorrectForListReposCall()
+    {
+        Asserts::assertListRepoOK($this->responseCode);
     }
 
 }

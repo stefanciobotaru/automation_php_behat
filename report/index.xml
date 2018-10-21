@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <testsuites>
   <testsuite name="default" tests="0"/>
-  <testsuite name="GitHub add, delete repositories" tests="7" failures="1" skipped="0" errors="0" time="22.434">
-    <testcase name="Successfully create 3 distinct repositories and assert that the response code is correct Line #11" time="3.125" status="passed"/>
-    <testcase name="Successfully create 3 distinct repositories and assert that the response code is correct Line #12" time="2.658" status="passed"/>
-    <testcase name="Successfully create 3 distinct repositories and assert that the response code is correct Line #13" time="1.646" status="passed"/>
-    <testcase name="Delete successfully one of them and assert that the response code is correct" time="3.892" status="passed"/>
-    <testcase name="Try to delete again one of the repositories and assert that the response code is correct for a failed delete" time="1.914" status="passed"/>
-    <testcase name="List the remaining repositories and assert the response code is correct, assert that the 2&#10;remaining repositories are still present and also assert that the deleted repository is&#10;present(this assert should fail)" time="2.869" status="failed">
+  <testsuite name="GitHub add, delete repositories" tests="7" failures="1" skipped="0" errors="0" time="20.638">
+    <testcase name="Successfully create 3 distinct repositories and assert that the response code is correct Line #11" time="2.396" status="passed"/>
+    <testcase name="Successfully create 3 distinct repositories and assert that the response code is correct Line #12" time="2.037" status="passed"/>
+    <testcase name="Successfully create 3 distinct repositories and assert that the response code is correct Line #13" time="1.809" status="passed"/>
+    <testcase name="Delete successfully one of them and assert that the response code is correct" time="3.788" status="passed"/>
+    <testcase name="Try to delete again one of the repositories and assert that the response code is correct for a failed delete" time="2.095" status="passed"/>
+    <testcase name="List the remaining repositories and assert the response code is correct, assert that the 2&#10;remaining repositories are still present and also assert that the deleted repository is&#10;present(this assert should fail)" time="1.859" status="failed">
       <failure type="Exception"><![CDATA[And "Repo1" repository is present:
 
 The expected repo: Repo1 is not present]]></failure>
     </testcase>
-    <testcase name="Delete all repositories" time="6.11" status="passed"/>
+    <testcase name="Delete all repositories" time="6.48" status="passed"/>
   </testsuite>
 </testsuites>
