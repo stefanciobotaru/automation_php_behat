@@ -89,7 +89,7 @@ class GitHubContext implements Context
     }
 
     /**
-     * @Given /^and save one to be deleted$/
+     * @Given /^save one to be deleted$/
      * @throws Exception
      */
     public function andSaveOneForLater()

@@ -15,9 +15,9 @@ Feature: GitHub add, delete repositories
   @delete_one
   Scenario: Delete successfully one of them and assert that the response code is correct
     Given I call the "https://api.github.com/user/repos" to get all repos
-    And the response code is correct for list repos call
-    And and save one to be deleted
-    When I call the "https://api.github.com/repos" api method to delete the saved repo
+    Then the response code is correct for list repos call
+    When save one to be deleted
+    And I call the "https://api.github.com/repos" api method to delete the saved repo
     Then the selected repo is successfully deleted
 
   @delete_dummy
@@ -31,7 +31,8 @@ Feature: GitHub add, delete repositories
   remaining repositories are still present and also assert that the deleted repository is
   present(this assert should fail)
     Given I call the "https://api.github.com/user/repos" to get all repos
-    Then "2" remaining repositories are still present
+    Then the response code is correct for list repos call
+    And "2" remaining repositories are still present
     And "Repo1" repository is present
 
   @delete_all
