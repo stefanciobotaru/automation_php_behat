@@ -38,10 +38,8 @@ class CCurl
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
-        curl_exec($ch);
-
-        $response['Code'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         $response['Body'] = curl_exec($ch);
+        $response['Code'] = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
         curl_close($ch);
 

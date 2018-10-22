@@ -23,18 +23,40 @@ class GitHubContext implements Context
     public $availableRepos;
     public $repoToDelete;
 
-    public $responseCode;
-
     public $APIClass;
 
+    public $responseCode;
+    public $tokenId;
+
+    /**
+     * GitHubContext constructor
+     * @throws Exception
+     */
     public function __construct()
     {
-
         $this->APIClass = new CAPI();
 
         $this->APIClass->setUser(self::USER);
         $this->APIClass->setPassword(self::PASSWORD);
 
+        $response = $this->APIClass->getAuthToken();
+
+        Asserts::assertAuthorizationIsCreated($response['Code']);
+
+        $this->APIClass->setToken($response['Body']->token);
+
+        $this->tokenId = $response['Body']->id;
+    }
+
+    /**
+     * GitHubContext destructor
+     * @throws Exception
+     */
+    public function __destruct()
+    {
+        $response = $this->APIClass->deleteAuthToken($this->tokenId);
+
+        Asserts::assertAuthorizationIsDeletedWithSuccess($response['Code']);
     }
 
     /**
@@ -54,7 +76,7 @@ class GitHubContext implements Context
      */
     public function iCallTheApiMethodToAddARepo($host)
     {
-        $response = $this->APIClass->callGitHubAPI($host, "POST", $this->newRepoData);
+        $response = $this->APIClass->callGitHubAPIOAuth($host, "POST", $this->newRepoData);
 
         $this->responseCode = $response['Code'];
     }
@@ -76,7 +98,7 @@ class GitHubContext implements Context
      */
     public function iCallTheToGetAllRepos($host)
     {
-        $response = $this->APIClass->callGitHubAPI($host, "GET");
+        $response = $this->APIClass->callGitHubAPIOAuth($host, "GET");
 
         $this->responseCode = $response['Code'];
 
@@ -115,7 +137,7 @@ class GitHubContext implements Context
      */
     public function iCallTheApiMethodToDeleteARepo($host)
     {
-        $response = $this->APIClass->callGitHubAPI($host . "/" . self::OWNER . "/$this->repoToDelete", "DELETE");
+        $response = $this->APIClass->callGitHubAPIOAuth($host . "/" . self::OWNER . "/$this->repoToDelete", "DELETE");
 
         $this->responseCode = $response['Code'];
     }
@@ -160,7 +182,8 @@ class GitHubContext implements Context
         if (is_array($this->availableRepos)) {
             foreach ($this->availableRepos as $repo) {
                 if ($repo->name != self::MAIN_REPO) {
-                    $response = $this->APIClass->callGitHubAPI($host . "/" . self::OWNER . "/$repo->name", "DELETE");
+                    $response = $this->APIClass->callGitHubAPIOAuth($host . "/" . self::OWNER . "/$repo->name",
+                        "DELETE");
                     Asserts::assertRepoIsDeletedWithSuccess($response['Code']);
                 }
             }
@@ -205,6 +228,14 @@ class GitHubContext implements Context
     public function theResponseCodeIsCorrectForListReposCall()
     {
         Asserts::assertListRepoOK($this->responseCode);
+    }
+
+    /**
+     * @Given /^I call the "([^"]*)" to get all authorizations$/
+     */
+    public function iCallTheToGetAllAuthorizations($arg1)
+    {
+        throw new \Behat\Behat\Tester\Exception\PendingException();
     }
 
 }

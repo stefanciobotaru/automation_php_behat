@@ -35,7 +35,7 @@ Feature: GitHub add, delete repositories
     And "2" remaining repositories are still present
     And "Repo1" repository is present
 
-  @delete_all
+  @delete_all_repos
   Scenario: Delete all repositories
     Given I call the "https://api.github.com/user/repos" to get all repos
     Then the response code is correct for list repos call

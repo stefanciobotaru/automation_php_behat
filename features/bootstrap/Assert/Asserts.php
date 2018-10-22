@@ -14,6 +14,36 @@ class Asserts
 {
 
     /**
+     * Assert response code 201 Created for create authorization
+     *
+     * @param $responseCode
+     *
+     * @throws \Exception
+     */
+    public static function assertAuthorizationIsCreated($responseCode)
+    {
+        if ($responseCode != 201) {
+            throw new \Exception("Create authorization call replied with: $responseCode, different than 201");
+        }
+
+    }
+
+    /**
+     * Assert response code 204 No Content for delete authorization with success
+     *
+     * @param $responseCode
+     *
+     * @throws \Exception
+     */
+    public static function assertAuthorizationIsDeletedWithSuccess($responseCode)
+    {
+        if ($responseCode != 204) {
+            throw new \Exception("Delete authorization call replied with: $responseCode, different than 204");
+        }
+
+    }
+
+    /**
      * Assert response code 200 OK for list repos
      *
      * @param $responseCode
@@ -98,7 +128,7 @@ class Asserts
 
 
         if ($count != $expected) {
-            throw new \Exception("The expected number of remaining repositories: $count is not equal to expected: $expected");
+            throw new \Exception("The actual number of remaining repositories: $count is not equal to expected: $expected");
         }
     }
 

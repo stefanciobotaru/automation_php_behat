@@ -29,48 +29,49 @@
     <session id="-941949821">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.0" value="2" />
           <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="behat" value="1" />
-          <entry key="feature" value="10" />
+          <entry key="feature" value="13" />
           <entry key="html" value="1" />
           <entry key="json" value="11" />
           <entry key="lock" value="3" />
           <entry key="md" value="3" />
-          <entry key="php" value="69" />
+          <entry key="php" value="76" />
           <entry key="png" value="2" />
           <entry key="reportDir" value="2" />
           <entry key="xml" value="2" />
-          <entry key="yml" value="10" />
+          <entry key="yml" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Cucumber" value="10" />
+          <entry key="Cucumber" value="13" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="2" />
           <entry key="JSON" value="14" />
           <entry key="Markdown" value="3" />
-          <entry key="PHP" value="69" />
+          <entry key="PHP" value="76" />
           <entry key="PLAIN_TEXT" value="3" />
           <entry key="XML" value="2" />
-          <entry key="YAML" value="10" />
+          <entry key="YAML" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="13" />
-          <entry key="feature" value="1007" />
+          <entry key="feature" value="1130" />
           <entry key="json" value="4" />
           <entry key="md" value="101" />
-          <entry key="php" value="3334" />
+          <entry key="php" value="4735" />
           <entry key="yml" value="68" />
         </counts>
       </usages-collector>
@@ -81,10 +82,10 @@
       <usages-collector id="statistics.php.composer.command.options" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Cucumber" value="1007" />
+          <entry key="Cucumber" value="1130" />
           <entry key="JSON" value="4" />
           <entry key="Markdown" value="101" />
-          <entry key="PHP" value="3334" />
+          <entry key="PHP" value="4735" />
           <entry key="PLAIN_TEXT" value="13" />
           <entry key="YAML" value="68" />
         </counts>
@@ -94,12 +95,42 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/features/api.feature">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="34" column="52" lean-forward="true" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+            <state relative-caret-position="272">
+              <caret line="16" column="73" lean-forward="true" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/bootstrap/Data/Data.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/features/bootstrap/GitHubContext.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+              <folding>
+                <element signature="e#102#134#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/features/bootstrap/Lib/CAPI.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -120,16 +151,16 @@
         <option value="$PROJECT_DIR$/features/bootstrap/DataCotext.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/features/bootstrap/Lib/CCurl.php" />
-        <option value="$PROJECT_DIR$/features/bootstrap/Lib/CAPI.php" />
         <option value="$PROJECT_DIR$/features/bootstrap/Asserts/Asserts.php" />
         <option value="$PROJECT_DIR$/features/bootstrap/Data/Data.php" />
-        <option value="$PROJECT_DIR$/features/bootstrap/Assert/Asserts.php" />
         <option value="$PROJECT_DIR$/features/bootstrap/FeatureContext.php" />
         <option value="$PROJECT_DIR$/features/bootstrap/Context/FeatureCosantext.php" />
         <option value="$PROJECT_DIR$/behat.yml" />
-        <option value="$PROJECT_DIR$/features/bootstrap/GitHubContext.php" />
+        <option value="$PROJECT_DIR$/features/bootstrap/Lib/CCurl.php" />
+        <option value="$PROJECT_DIR$/features/bootstrap/Assert/Asserts.php" />
         <option value="$PROJECT_DIR$/features/api.feature" />
+        <option value="$PROJECT_DIR$/features/bootstrap/GitHubContext.php" />
+        <option value="$PROJECT_DIR$/features/bootstrap/Lib/CAPI.php" />
       </list>
     </option>
   </component>
@@ -253,7 +284,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Behat.api.feature::Successfully create 3 distinct repositories and assert that the response code is correct">
+  <component name="RunManager" selected="Behat.api.feature">
     <configuration name="api.feature" type="PhpBehatConfigurationType" factoryName="Behat" temporary="true">
       <BehatRunner file="$PROJECT_DIR$/features/api.feature" scope="File" />
       <method v="2" />
@@ -283,9 +314,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Behat.api.feature::Successfully create 3 distinct repositories and assert that the response code is correct" />
         <item itemvalue="Behat.api.feature" />
         <item itemvalue="Behat.api.feature::Delete all repositories" />
+        <item itemvalue="Behat.api.feature::Successfully create 3 distinct repositories and assert that the response code is correct" />
         <item itemvalue="Behat.api.feature::Try to delete again one of the repositories and assert that the response code is correct for a failed delete" />
         <item itemvalue="Behat.api.feature::Delete successfully one of them and assert that the response code is correct" />
       </list>
@@ -305,55 +336,56 @@
       <workItem from="1539970603596" duration="15521000" />
       <workItem from="1540098542898" duration="6004000" />
       <workItem from="1540104721024" duration="2147000" />
-      <workItem from="1540129475220" duration="3713000" />
+      <workItem from="1540129475220" duration="3948000" />
+      <workItem from="1540227845543" duration="6113000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="api_feature__Delete_all_repositories - 2018.10.21 at 16h 48m 50s.xml">
-      <configuration name="api.feature::Delete all repositories" configurationId="PhpBehatConfigurationType" />
-    </history-entry>
-    <history-entry file="api_feature__Delete_all_repositories - 2018.10.21 at 16h 49m 20s.xml">
-      <configuration name="api.feature::Delete all repositories" configurationId="PhpBehatConfigurationType" />
-    </history-entry>
-    <history-entry file="api_feature - 2018.10.21 at 16h 54m 20s.xml">
+    <history-entry file="api_feature - 2018.10.22 at 21h 26m 31s.xml">
       <configuration name="api.feature" configurationId="PhpBehatConfigurationType" />
     </history-entry>
-    <history-entry file="api_feature - 2018.10.21 at 16h 54m 45s.xml">
+    <history-entry file="api_feature - 2018.10.22 at 21h 29m 30s.xml">
       <configuration name="api.feature" configurationId="PhpBehatConfigurationType" />
     </history-entry>
-    <history-entry file="api_feature - 2018.10.21 at 16h 54m 52s.xml">
+    <history-entry file="api_feature - 2018.10.22 at 21h 35m 41s.xml">
       <configuration name="api.feature" configurationId="PhpBehatConfigurationType" />
     </history-entry>
-    <history-entry file="api_feature - 2018.10.21 at 16h 57m 20s.xml">
+    <history-entry file="api_feature - 2018.10.22 at 21h 39m 25s.xml">
       <configuration name="api.feature" configurationId="PhpBehatConfigurationType" />
     </history-entry>
-    <history-entry file="api_feature - 2018.10.21 at 16h 58m 04s.xml">
+    <history-entry file="api_feature - 2018.10.22 at 21h 40m 14s.xml">
       <configuration name="api.feature" configurationId="PhpBehatConfigurationType" />
     </history-entry>
-    <history-entry file="api_feature - 2018.10.21 at 17h 07m 06s.xml">
+    <history-entry file="api_feature - 2018.10.22 at 21h 41m 45s.xml">
       <configuration name="api.feature" configurationId="PhpBehatConfigurationType" />
     </history-entry>
-    <history-entry file="api_feature - 2018.10.21 at 17h 10m 42s.xml">
+    <history-entry file="api_feature - 2018.10.22 at 21h 43m 23s.xml">
       <configuration name="api.feature" configurationId="PhpBehatConfigurationType" />
     </history-entry>
-    <history-entry file="api_feature__Successfully_create_3_distinct_repositories_and_assert_that_the_response_code_is_correct - 2018.10.21 at 17h 30m 46s.xml">
-      <configuration name="api.feature::Successfully create 3 distinct repositories and assert that the response code is correct" configurationId="PhpBehatConfigurationType" />
+    <history-entry file="api_feature - 2018.10.22 at 21h 44m 36s.xml">
+      <configuration name="api.feature" configurationId="PhpBehatConfigurationType" />
+    </history-entry>
+    <history-entry file="api_feature - 2018.10.22 at 21h 45m 04s.xml">
+      <configuration name="api.feature" configurationId="PhpBehatConfigurationType" />
+    </history-entry>
+    <history-entry file="api_feature - 2018.10.22 at 21h 46m 18s.xml">
+      <configuration name="api.feature" configurationId="PhpBehatConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29482000" />
+    <option name="totallyTimeSpent" value="35830000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26066098" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.329718" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3991323" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -462,37 +494,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/bootstrap/Lib/CCurl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/bootstrap/Lib/CAPI.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="63" column="9" lean-forward="true" selection-start-line="63" selection-start-column="9" selection-end-line="63" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/bootstrap/Assert/Asserts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="13" lean-forward="true" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/bootstrap/FeatureContext.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/features/bootstrap/Context/FeatureCosantext.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/features/bootstrap/FeatureContext.php" />
+    <entry file="file://$PROJECT_DIR$/features/bootstrap/Context/FeatureCosantext.php" />
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -500,9 +503,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/report/reportDir">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/report/reportDir" />
     <entry file="file://$PROJECT_DIR$/report/index.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -518,27 +519,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/features/bootstrap/Data/Data.php">
+    <entry file="file://$PROJECT_DIR$/features/bootstrap/Lib/CCurl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="349">
+          <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/bootstrap/Assert/Asserts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1130">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/features/bootstrap/GitHubContext.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="145" column="20" selection-start-line="145" selection-start-column="20" selection-end-line="145" selection-end-column="20" />
+        <state relative-caret-position="204">
+          <caret line="17" column="45" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
           <folding>
             <element signature="e#102#134#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="914" column="9" selection-start-line="914" selection-start-column="9" selection-end-line="914" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/bootstrap/Data/Data.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/features/api.feature">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="52" lean-forward="true" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+        <state relative-caret-position="272">
+          <caret line="16" column="73" lean-forward="true" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/features/bootstrap/Lib/CAPI.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
         </state>
       </provider>
     </entry>
