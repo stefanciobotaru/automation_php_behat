@@ -46,6 +46,7 @@ class CAPI
      * @param integer $id Auth token id
      *
      * @return array returns call response code and token details
+     * @throws \Exception
      */
     public function deleteAuthToken($id)
     {
@@ -68,6 +69,7 @@ class CAPI
      * @param bool   $debug
      *
      * @return array returns call response code and body
+     * @throws \Exception
      */
     public function callGitHubAPIOAuth($hostUrl, $method, $requestData = null, $debug = false)
     {
@@ -137,6 +139,7 @@ class CAPI
      * @param $response
      *
      * @return mixed
+     * @throws \Exception
      */
     public function decodeResponse($response)
     {
@@ -149,6 +152,8 @@ class CAPI
             $response['Body'] = $responseBody;
 
             return $response;
+        } else {
+            throw new \Exception("No response");
         }
 
     }
