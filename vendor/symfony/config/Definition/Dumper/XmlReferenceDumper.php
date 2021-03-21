@@ -18,7 +18,7 @@ use Symfony\Component\Config\Definition\NodeInterface;
 use Symfony\Component\Config\Definition\PrototypedArrayNode;
 
 /**
- * Dumps a XML reference configuration for the given configuration/node instance.
+ * Dumps an XML reference configuration for the given configuration/node instance.
  *
  * @author Wouter J <waldio.webdesign@gmail.com>
  */
@@ -26,12 +26,12 @@ class XmlReferenceDumper
 {
     private $reference;
 
-    public function dump(ConfigurationInterface $configuration, $namespace = null)
+    public function dump(ConfigurationInterface $configuration, string $namespace = null)
     {
         return $this->dumpNode($configuration->getConfigTreeBuilder()->buildTree(), $namespace);
     }
 
-    public function dumpNode(NodeInterface $node, $namespace = null)
+    public function dumpNode(NodeInterface $node, string $namespace = null)
     {
         $this->reference = '';
         $this->writeNode($node, 0, true, $namespace);
@@ -41,13 +41,7 @@ class XmlReferenceDumper
         return $ref;
     }
 
-    /**
-     * @param NodeInterface $node
-     * @param int           $depth
-     * @param bool          $root      If the node is the root node
-     * @param string        $namespace The namespace of the node
-     */
-    private function writeNode(NodeInterface $node, $depth = 0, $root = false, $namespace = null)
+    private function writeNode(NodeInterface $node, int $depth = 0, bool $root = false, string $namespace = null)
     {
         $rootName = ($root ? 'config' : $node->getName());
         $rootNamespace = ($namespace ?: ($root ? 'http://example.org/schema/dic/'.$node->getName() : null));
@@ -59,16 +53,16 @@ class XmlReferenceDumper
             });
 
             if (\count($remapping)) {
-                list($singular) = current($remapping);
+                [$singular] = current($remapping);
                 $rootName = $singular;
             }
         }
         $rootName = str_replace('_', '-', $rootName);
 
-        $rootAttributes = array();
-        $rootAttributeComments = array();
-        $rootChildren = array();
-        $rootComments = array();
+        $rootAttributes = [];
+        $rootAttributeComments = [];
+        $rootChildren = [];
+        $rootComments = [];
 
         if ($node instanceof ArrayNode) {
             $children = $node->getChildren();
@@ -97,8 +91,8 @@ class XmlReferenceDumper
                 }
 
                 if ($prototype instanceof PrototypedArrayNode) {
-                    $prototype->setName($key);
-                    $children = array($key => $prototype);
+                    $prototype->setName($key ?? '');
+                    $children = [$key => $prototype];
                 } elseif ($prototype instanceof ArrayNode) {
                     $children = $prototype->getChildren();
                 } else {
@@ -140,7 +134,7 @@ class XmlReferenceDumper
                     $value = '%%%%not_defined%%%%'; // use a string which isn't used in the normal world
 
                     // comments
-                    $comments = array();
+                    $comments = [];
                     if ($info = $child->getInfo()) {
                         $comments[] = $info;
                     }
@@ -154,7 +148,8 @@ class XmlReferenceDumper
                     }
 
                     if ($child->isDeprecated()) {
-                        $comments[] = sprintf('Deprecated (%s)', $child->getDeprecationMessage($child->getName(), $node->getPath()));
+                        $deprecation = $child->getDeprecation($child->getName(), $node->getPath());
+                        $comments[] = sprintf('Deprecated (%s)', ($deprecation['package'] || $deprecation['version'] ? "Since {$deprecation['package']} {$deprecation['version']}: " : '').$deprecation['message']);
                     }
 
                     if ($child instanceof EnumNode) {
@@ -194,7 +189,7 @@ class XmlReferenceDumper
                 $commentDepth = $depth + 4 + \strlen($attrName) + 2;
                 $commentLines = explode("\n", $comment);
                 $multiline = (\count($commentLines) > 1);
-                $comment = implode(PHP_EOL.str_repeat(' ', $commentDepth), $commentLines);
+                $comment = implode(\PHP_EOL.str_repeat(' ', $commentDepth), $commentLines);
 
                 if ($multiline) {
                     $this->writeLine('<!--', $depth);
@@ -259,26 +254,21 @@ class XmlReferenceDumper
 
     /**
      * Outputs a single config reference line.
-     *
-     * @param string $text
-     * @param int    $indent
      */
-    private function writeLine($text, $indent = 0)
+    private function writeLine(string $text, int $indent = 0)
     {
         $indent = \strlen($text) + $indent;
         $format = '%'.$indent.'s';
 
-        $this->reference .= sprintf($format, $text).PHP_EOL;
+        $this->reference .= sprintf($format, $text).\PHP_EOL;
     }
 
     /**
      * Renders the string conversion of the value.
      *
      * @param mixed $value
-     *
-     * @return string
      */
-    private function writeValue($value)
+    private function writeValue($value): string
     {
         if ('%%%%not_defined%%%%' === $value) {
             return '';
@@ -307,5 +297,7 @@ class XmlReferenceDumper
         if (\is_array($value)) {
             return implode(',', $value);
         }
+
+        return '';
     }
 }

@@ -7,7 +7,7 @@ default:
     pretty:
     junit:
     html:
-      output_path: %paths.base%/report
+      output_path: "%paths.base%/report"
   extensions:
     elkan\BehatFormatter\BehatFormatterExtension:
       projectName: GitHub
@@ -20,5 +20,4 @@ default:
       show_tags: true
     jarnaiz\JUnitFormatter\JUnitFormatterExtension:
       filename: index.xml
-      outputDir: %paths.base%/report
-
+      outputDir: "%paths.base%/report"

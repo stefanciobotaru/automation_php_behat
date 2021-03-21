@@ -83,7 +83,7 @@ context is to call the ``getPage`` method provided by the
     .. note::
 
         Alternatively you could implement the
-        ``SensioLabs\Behat\PageObjectExtension\Context\PageObjectAwareInterface``.
+        ``SensioLabs\Behat\PageObjectExtension\Context\PageObjectAware`` Interface.
 
 Page factory finds a corresponding class by the passed name:
 
@@ -107,10 +107,7 @@ From version 2.1 it is possibile to use ``getPage()`` method with page FQCN as f
              */
             public function iSearchFor($keywords)
             {
-                // For PHP >= 5.5.0
                 $this->getPage(Homepage::class)->search($keywords);
-                // For PHP < 5.5.0
-                $this->getPage('Page\\Homepage')->search($keywords);
             }
         }
 

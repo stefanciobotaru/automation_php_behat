@@ -24,7 +24,7 @@ class CheckArgumentsValidityPass extends AbstractRecursivePass
 {
     private $throwExceptions;
 
-    public function __construct($throwExceptions = true)
+    public function __construct(bool $throwExceptions = true)
     {
         $this->throwExceptions = $throwExceptions;
     }
@@ -32,7 +32,7 @@ class CheckArgumentsValidityPass extends AbstractRecursivePass
     /**
      * {@inheritdoc}
      */
-    protected function processValue($value, $isRoot = false)
+    protected function processValue($value, bool $isRoot = false)
     {
         if (!$value instanceof Definition) {
             return parent::processValue($value, $isRoot);
@@ -81,5 +81,7 @@ class CheckArgumentsValidityPass extends AbstractRecursivePass
                 }
             }
         }
+
+        return null;
     }
 }

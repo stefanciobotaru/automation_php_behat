@@ -24,7 +24,7 @@ use ReflectionMethod;
  */
 final class AnnotatedContextReader implements ContextReader
 {
-    const DOCLINE_TRIMMER_REGEX = '/^\/\*\*\s*|^\s*\*\s*|\s*\*\/$|\s*$/';
+    public const DOCLINE_TRIMMER_REGEX = '/^\/\*\*\s*|^\s*\*\s*|\s*\*\/$|\s*$/';
 
     /**
      * @var string[]
@@ -180,7 +180,7 @@ final class AnnotatedContextReader implements ContextReader
      *
      * @param string $docLine
      *
-     * @return Boolean
+     * @return bool
      */
     private function isEmpty($docLine)
     {
@@ -192,7 +192,7 @@ final class AnnotatedContextReader implements ContextReader
      *
      * @param string $docLine
      *
-     * @return Boolean
+     * @return bool
      */
     private function isNotAnnotation($docLine)
     {
@@ -229,7 +229,7 @@ final class AnnotatedContextReader implements ContextReader
      *
      * @param string $docLine
      *
-     * @return Boolean
+     * @return bool
      */
     private function isIgnoredAnnotation($docLine)
     {

@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\DependencyInjection\Compiler;
 
+use Symfony\Component\Config\Definition\BaseNode;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Exception\LogicException;
 use Symfony\Component\DependencyInjection\Exception\RuntimeException;
@@ -37,6 +38,7 @@ class MergeExtensionConfigurationPass implements CompilerPassInterface
         $definitions = $container->getDefinitions();
         $aliases = $container->getAliases();
         $exprLangProviders = $container->getExpressionLanguageProviders();
+        $configAvailable = class_exists(BaseNode::class);
 
         foreach ($container->getExtensions() as $extension) {
             if ($extension instanceof PrependExtensionInterface) {
@@ -53,6 +55,9 @@ class MergeExtensionConfigurationPass implements CompilerPassInterface
             if ($resolvingBag instanceof EnvPlaceholderParameterBag && $extension instanceof Extension) {
                 // create a dedicated bag so that we can track env vars per-extension
                 $resolvingBag = new MergeExtensionConfigurationParameterBag($resolvingBag);
+                if ($configAvailable) {
+                    BaseNode::setPlaceholderUniquePrefix($resolvingBag->getEnvPlaceholderUniquePrefix());
+                }
             }
             $config = $resolvingBag->resolveValue($config);
 
@@ -74,6 +79,10 @@ class MergeExtensionConfigurationPass implements CompilerPassInterface
                     $container->getParameterBag()->mergeEnvPlaceholders($resolvingBag);
                 }
 
+                if ($configAvailable) {
+                    BaseNode::resetPlaceholders();
+                }
+
                 throw $e;
             }
 
@@ -84,6 +93,10 @@ class MergeExtensionConfigurationPass implements CompilerPassInterface
 
             $container->merge($tmpContainer);
             $container->getParameterBag()->add($parameters);
+        }
+
+        if ($configAvailable) {
+            BaseNode::resetPlaceholders();
         }
 
         $container->addDefinitions($definitions);
@@ -110,7 +123,7 @@ class MergeExtensionConfigurationParameterBag extends EnvPlaceholderParameterBag
             // Extension::processConfiguration() wasn't called, we cannot know how configs were merged
             return;
         }
-        $this->processedEnvPlaceholders = array();
+        $this->processedEnvPlaceholders = [];
 
         // serialize config and container to catch env vars nested in object graphs
         $config = serialize($config).serialize($container->getDefinitions()).serialize($container->getAliases()).serialize($container->getParameterBag()->all());
@@ -128,9 +141,14 @@ class MergeExtensionConfigurationParameterBag extends EnvPlaceholderParameterBag
     /**
      * {@inheritdoc}
      */
-    public function getEnvPlaceholders()
+    public function getEnvPlaceholders(): array
     {
         return null !== $this->processedEnvPlaceholders ? $this->processedEnvPlaceholders : parent::getEnvPlaceholders();
+    }
+
+    public function getUnusedEnvPlaceholders(): array
+    {
+        return null === $this->processedEnvPlaceholders ? [] : array_diff_key(parent::getEnvPlaceholders(), $this->processedEnvPlaceholders);
     }
 }
 
@@ -153,9 +171,9 @@ class MergeExtensionConfigurationContainerBuilder extends ContainerBuilder
     /**
      * {@inheritdoc}
      */
-    public function addCompilerPass(CompilerPassInterface $pass, $type = PassConfig::TYPE_BEFORE_OPTIMIZATION/*, int $priority = 0*/)
+    public function addCompilerPass(CompilerPassInterface $pass, string $type = PassConfig::TYPE_BEFORE_OPTIMIZATION, int $priority = 0): self
     {
-        throw new LogicException(sprintf('You cannot add compiler pass "%s" from extension "%s". Compiler passes must be registered before the container is compiled.', \get_class($pass), $this->extensionClass));
+        throw new LogicException(sprintf('You cannot add compiler pass "%s" from extension "%s". Compiler passes must be registered before the container is compiled.', get_debug_type($pass), $this->extensionClass));
     }
 
     /**
@@ -163,13 +181,13 @@ class MergeExtensionConfigurationContainerBuilder extends ContainerBuilder
      */
     public function registerExtension(ExtensionInterface $extension)
     {
-        throw new LogicException(sprintf('You cannot register extension "%s" from "%s". Extensions must be registered before the container is compiled.', \get_class($extension), $this->extensionClass));
+        throw new LogicException(sprintf('You cannot register extension "%s" from "%s". Extensions must be registered before the container is compiled.', get_debug_type($extension), $this->extensionClass));
     }
 
     /**
      * {@inheritdoc}
      */
-    public function compile($resolveEnvPlaceholders = false)
+    public function compile(bool $resolveEnvPlaceholders = false)
     {
         throw new LogicException(sprintf('Cannot compile the container in extension "%s".', $this->extensionClass));
     }
@@ -185,6 +203,10 @@ class MergeExtensionConfigurationContainerBuilder extends ContainerBuilder
 
         $bag = $this->getParameterBag();
         $value = $bag->resolveValue($value);
+
+        if (!$bag instanceof EnvPlaceholderParameterBag) {
+            return parent::resolveEnvPlaceholders($value, $format, $usedEnvs);
+        }
 
         foreach ($bag->getEnvPlaceholders() as $env => $placeholders) {
             if (false === strpos($env, ':')) {

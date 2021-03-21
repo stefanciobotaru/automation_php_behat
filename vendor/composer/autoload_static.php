@@ -4,11 +4,19 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b
+class ComposerStaticInitef24e9b5925d5e610a1c8a4d4d015aef
 {
     public static $files = array (
+        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
+        'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
+        '0d59ee240a4cd96ddbb4ff164fccea4d' => __DIR__ . '/..' . '/symfony/polyfill-php73/bootstrap.php',
+        'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
+        'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
+        '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -20,44 +28,52 @@ class ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b
         array (
             'elkan\\BehatFormatter\\' => 21,
         ),
-        'Z' => 
-        array (
-            'Zend\\EventManager\\' => 18,
-            'Zend\\Code\\' => 10,
-        ),
         'T' => 
         array (
             'Twig\\' => 5,
         ),
         'S' => 
         array (
+            'Symfony\\Polyfill\\Php80\\' => 23,
+            'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
+            'Symfony\\Polyfill\\Intl\\Grapheme\\' => 31,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Contracts\\Translation\\' => 30,
+            'Symfony\\Contracts\\Service\\' => 26,
+            'Symfony\\Contracts\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Translation\\' => 30,
+            'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\Filesystem\\' => 29,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\DependencyInjection\\' => 38,
-            'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\CssSelector\\' => 30,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Config\\' => 25,
-            'Symfony\\Component\\ClassLoader\\' => 30,
+            'SensioLabs\\Behat\\PageObjectExtension\\' => 37,
         ),
         'P' => 
         array (
-            'Psr\\Log\\' => 8,
+            'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
+            'ProxyManager\\' => 13,
             'PackageVersions\\' => 16,
         ),
-        'I' => 
+        'L' => 
         array (
-            'Interop\\Container\\' => 18,
+            'Laminas\\ZendFrameworkBridge\\' => 28,
+            'Laminas\\EventManager\\' => 21,
+            'Laminas\\Code\\' => 13,
         ),
         'B' => 
         array (
+            'Behat\\Transliterator\\' => 21,
+            'Behat\\Testwork\\' => 15,
             'Behat\\Mink\\Driver\\' => 18,
             'Behat\\Mink\\' => 11,
+            'Behat\\Behat\\' => 12,
         ),
     );
 
@@ -70,25 +86,45 @@ class ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b
         array (
             0 => __DIR__ . '/..' . '/elkan/behatformatter/src',
         ),
-        'Zend\\EventManager\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-eventmanager/src',
-        ),
-        'Zend\\Code\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
-        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
+        ),
+        'Symfony\\Polyfill\\Php80\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
+        ),
+        'Symfony\\Polyfill\\Php73\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-php73',
         ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
         ),
+        'Symfony\\Polyfill\\Intl\\Normalizer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer',
+        ),
+        'Symfony\\Polyfill\\Intl\\Grapheme\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme',
+        ),
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Symfony\\Contracts\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/translation-contracts',
+        ),
+        'Symfony\\Contracts\\Service\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
+        'Symfony\\Contracts\\EventDispatcher\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/event-dispatcher-contracts',
         ),
         'Symfony\\Component\\Yaml\\' => 
         array (
@@ -97,6 +133,10 @@ class ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b
         'Symfony\\Component\\Translation\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
+        ),
+        'Symfony\\Component\\String\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/string',
         ),
         'Symfony\\Component\\Filesystem\\' => 
         array (
@@ -110,10 +150,6 @@ class ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b
         array (
             0 => __DIR__ . '/..' . '/symfony/dependency-injection',
         ),
-        'Symfony\\Component\\Debug\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/debug',
-        ),
         'Symfony\\Component\\CssSelector\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/css-selector',
@@ -126,25 +162,45 @@ class ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b
         array (
             0 => __DIR__ . '/..' . '/symfony/config',
         ),
-        'Symfony\\Component\\ClassLoader\\' => 
+        'SensioLabs\\Behat\\PageObjectExtension\\' => 
         array (
-            0 => __DIR__ . '/..' . '/symfony/class-loader',
+            0 => __DIR__ . '/..' . '/sensiolabs/behat-page-object-extension/src',
         ),
-        'Psr\\Log\\' => 
+        'Psr\\EventDispatcher\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+            0 => __DIR__ . '/..' . '/psr/event-dispatcher/src',
         ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'ProxyManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofphp/proxy-manager-lts/src/ProxyManager',
+        ),
         'PackageVersions\\' => 
         array (
-            0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
+            0 => __DIR__ . '/..' . '/composer/package-versions-deprecated/src/PackageVersions',
         ),
-        'Interop\\Container\\' => 
+        'Laminas\\ZendFrameworkBridge\\' => 
         array (
-            0 => __DIR__ . '/..' . '/container-interop/container-interop/src/Interop/Container',
+            0 => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src',
+        ),
+        'Laminas\\EventManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-eventmanager/src',
+        ),
+        'Laminas\\Code\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
+        ),
+        'Behat\\Transliterator\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/behat/transliterator/src/Behat/Transliterator',
+        ),
+        'Behat\\Testwork\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/behat/behat/src/Behat/Testwork',
         ),
         'Behat\\Mink\\Driver\\' => 
         array (
@@ -153,6 +209,10 @@ class ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b
         'Behat\\Mink\\' => 
         array (
             0 => __DIR__ . '/..' . '/behat/mink/src',
+        ),
+        'Behat\\Behat\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/behat/behat/src/Behat/Behat',
         ),
     );
 
@@ -171,20 +231,6 @@ class ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
-        'S' => 
-        array (
-            'SensioLabs\\Behat\\PageObjectExtension\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/sensiolabs/behat-page-object-extension/src',
-            ),
-        ),
-        'P' => 
-        array (
-            'ProxyManager\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/ocramius/proxy-manager/src',
-            ),
-        ),
         'C' => 
         array (
             'Curl' => 
@@ -194,35 +240,33 @@ class ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b
         ),
         'B' => 
         array (
-            'Behat\\Transliterator' => 
-            array (
-                0 => __DIR__ . '/..' . '/behat/transliterator/src',
-            ),
-            'Behat\\Testwork' => 
-            array (
-                0 => __DIR__ . '/..' . '/behat/behat/src',
-            ),
             'Behat\\MinkExtension' => 
             array (
-                0 => __DIR__ . '/..' . '/behat/mink-extension/src',
+                0 => __DIR__ . '/..' . '/friends-of-behat/mink-extension/src',
             ),
             'Behat\\Gherkin' => 
             array (
                 0 => __DIR__ . '/..' . '/behat/gherkin/src',
             ),
-            'Behat\\Behat' => 
-            array (
-                0 => __DIR__ . '/..' . '/behat/behat/src',
-            ),
         ),
+    );
+
+    public static $classMap = array (
+        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
+        'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
+        'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
+        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
+        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInita9143dc07e551f6152e8df22eeb8ff6b::$prefixesPsr0;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitef24e9b5925d5e610a1c8a4d4d015aef::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitef24e9b5925d5e610a1c8a4d4d015aef::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitef24e9b5925d5e610a1c8a4d4d015aef::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitef24e9b5925d5e610a1c8a4d4d015aef::$classMap;
 
         }, null, ClassLoader::class);
     }
